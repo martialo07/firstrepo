@@ -37,7 +37,7 @@ pipeline {
 
     post {
       success {
-        mail to: 'test@example.com', subject: 'The Pipeline failed', body: '${BUILD_URL}'
+        mail to: 'test@example.com', subject: 'The Pipeline failed', body: "${BUILD_URL}"
       }
     }
 
