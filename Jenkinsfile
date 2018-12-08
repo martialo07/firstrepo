@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'ng build --prod'
+                bat 'npm ng build --prod'
             }
         }
         stage('Test') {
