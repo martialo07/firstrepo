@@ -2,18 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage ('checkout'){
-              steps{
-                checkout scm
-              }
-        }
-
         stage('npm-install') {
             steps {
                 echo "Branch is ${GIT_BRANCH}..."
                 withNPM() {
                     echo "Performing npm build..."
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -37,7 +31,7 @@ pipeline {
         stage ('clean up') {
               steps{
                 echo 'Cleaning up..'
-                sh 'rm -rf node_modules'
+                bat 'rm -rf node_modules'
               }
         }
     }
