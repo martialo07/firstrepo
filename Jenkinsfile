@@ -29,7 +29,7 @@ pipeline {
         stage ('clean up') {
               steps{
                 echo 'Cleaning up..'
-                bat 'rm -rf node_modules'
+                bat 'rmdir /q/f/s node_modules'
               }
         }
     }
