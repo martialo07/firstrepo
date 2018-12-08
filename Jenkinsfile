@@ -10,8 +10,7 @@ pipeline {
 
         stage('npm-install') {
             steps {
-                echo "Branch is ${env.BRANCH_NAME}..."
-
+                echo "Branch is ${GIT_BRANCH}..."
                 withNPM() {
                     echo "Performing npm build..."
                     sh 'npm install'
