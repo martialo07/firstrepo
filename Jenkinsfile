@@ -42,9 +42,4 @@ pipeline {
               }
         }
     }
-    post {
-        always {
-            mail to: test@example.com, subject: 'The Pipeline failed :('
-        }
-    }
 }
