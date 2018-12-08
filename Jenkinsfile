@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                bat 'ng build --prod'
             }
         }
         stage('Test') {
@@ -29,7 +30,7 @@ pipeline {
         stage ('clean up') {
               steps{
                 echo 'Cleaning up..'
-                bat 'rmdir /q/f/s node_modules'
+                bat 'rmdir /q/s node_modules'
               }
         }
     }
