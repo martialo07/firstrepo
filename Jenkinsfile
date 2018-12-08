@@ -5,10 +5,8 @@ pipeline {
         stage('npm-install') {
             steps {
                 echo "Branch is ${GIT_BRANCH}..."
-                withNPM(npmrcConfig:'MyNpmrcConfig') {
-                    echo "Performing npm build..."
-                    bat 'npm install'
-                }
+                echo "Performing npm build..."
+                bat 'npm install'
             }
         }
 
