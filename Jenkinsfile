@@ -33,10 +33,12 @@ pipeline {
                 bat 'rmdir /q/s node_modules'
               }
         }
+
+        post {
+          always {
+            mail to: 'test@example.com', subject: 'The Pipeline failed'
+          }
+        }
     }
-  post {
-	  always {
-		mail to: 'test@example.com', subject: 'The Pipeline failed'
-	  }
-	}
+
 }
